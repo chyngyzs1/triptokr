@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'blog/includes/links.html' %}
+    <meta charset="UTF-8">
+    <title>Review Create </title>
+</head>
+<body>
+{% include 'blog/includes/header.html' %}
+
+<img class="header-img" src="{% static 'blog/img/header/1.jpg' %}" alt="1"/><br><br>
+
+<form action="#" method="post">
+    {% csrf_token %}
+
+    <h1> Create preview</h1>
+    {{ form.full_name }}<br>
+    {{ form.email }}<br>
+    {{ form.text }}<br>
+
+
+    <button type="submit" class="btn btn-primary">Create review</button>
+</form>
+
+</body>
+</html>

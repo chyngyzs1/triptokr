@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include 'blog/includes/links.html' %}
+    <title>Trip to Kyrgyzstan</title>
+</head>
+<body>
+{% include 'blog/includes/header.html' %}
+<main>
+    <section class="main-slider"><img class="main-slider__img" src="../static/blog/img/main/main-page/slide1.jpg"
+                                      alt="slide1"/>
+        <div class="main-slider__inner container">
+            <div class="main-slider__text">
+                <h1 class="title">Welcome to <br/> Kyrgyzstan</h1>
+                <p class="subtitle">Kyrgyzstan is a South-Central Asian Union country of incredible natural beauty and
+                    proud nomadic traditions.</p>
+                <div class="btn explore-tours">Explore <i class="fas fa-long-arrow-alt-right"></i></div>
+            </div>
+            <div class="top-tours">
+                <h2 class="top-tours__title">Top Tours</h2>
+                <ul class="main-slider__tours">
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Canyon <br> Issyk-Kul</p><img class="tour-card__img"
+                                                                                  src="../static/blog/img/main/main-page/top-tours/1.jpg"
+                                                                                  alt="1"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Suusamyr <br> Chuy</p><img class="tour-card__img"
+                                                                               src="../static/blog/img/main/main-page/top-tours/2.jpg"
+                                                                               alt="2"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Burana Tower <br> Chuy</p><img class="tour-card__img"
+                                                                                   src="../static/blog/img/main/main-page/top-tours/3.jpg"
+                                                                                   alt="3"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Song Kul <br> Naryn</p><img class="tour-card__img"
+                                                                                src="../static/blog/img/main/main-page/top-tours/4.jpg"
+                                                                                alt="4"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Arslanbob <br> Jalal-Abad</p><img class="tour-card__img"
+                                                                                      src="../static/blog/img/main/main-page/top-tours/5.jpg"
+                                                                                      alt="5"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Kel - Suu <br> Naryn</p><img class="tour-card__img"
+                                                                                 src="../static/blog/img/main/main-page/top-tours/6.jpg"
+                                                                                 alt="6"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Sary - Chelek <br> Jalal-Abad</p><img class="tour-card__img"
+                                                                                          src="../static/blog/img/main/main-page/top-tours/7.jpg"
+                                                                                          alt="7"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title">Sulaiman - Too <br> Issyk-Kul</p><img class="tour-card__img"
+                                                                                          src="../static/blog/img/main/main-page/top-tours/8.jpg"
+                                                                                          alt="8"/></a></li>
+                    <li><a class="tour-card" href="#">
+                        <p class="tour-card__title"><br> Batken</p><img class="tour-card__img"
+                                                                        src="../static/blog/img/main/main-page/top-tours/9.jpg"
+                                                                        alt="9"/></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="our-services">
+        <div class="container">
+            <ul class="list">
+                <li class="list__item our-services__item">
+                    <div class="icons"><img src="../static/blog/img/main/main-page/icons/1.jpg" alt="1"/></div>
+                    <p class="text">We take care of each of our guests</p>
+                </li>
+                <li class="list__item our-services__item">
+                    <div class="icons"><img src="../static/blog/img/main/main-page/icons/2.jpg" alt="2"/></div>
+                    <p class="text">We have the most professional and caring guides</p>
+                </li>
+                <li class="list__item our-services__item">
+                    <div class="icons"><img src="../static/blog/img/main/main-page/icons/3.jpg" alt="3"/></div>
+                    <p class="text">The highest quality and most comfortable services</p>
+                </li>
+            </ul>
+            <div class="gallery">
+                <div class="gallery__title">Gallery</div>
+                <div class="gallery__describe">Kyrgyzstan is a paradise for travelers who want to discover new horizons,
+                    get acquainted with the natural world and with the unusual culture of the country. The Kyrgyz people
+                    have been known since ancient times for their warmth and hospitality. We invite you to visit
+                    Kyrgyzstan, and it will not leave you indifferent!
+                </div>
+                <div class="gallery__slider"></div>
+            </div>
+        </div>
+    </section>
+    <section class="trips">
+        <div class="container">
+            <ul class="list trips__list">
+                <li class="list__item trips__item"><img class="trips__img"
+                                                        src="../static/blog/img/main/main-page/trips/1.jpg" alt="1"/>
+                    <div class="trips__text">
+                        <h2 class="trips__title">Ecotourism</h2>
+                        <p class="trips__about">Kyrgyzstan is one of the unique places in the world where you can get
+                            acquainted with wildlife.</p>
+                    </div>
+                </li>
+                <li class="list__item trips__item"><img class="trips__img"
+                                                        src="../static/blog/img/main/main-page/trips/2.jpg" alt="2"/>
+                    <div class="trips__text">
+                        <h2 class="trips__title">Sport Trips</h2>
+                        <p class="trips__about">Kyrgyzstan is a unique destination for who loves sport and extreme
+                            activity.</p>
+                    </div>
+                </li>
+                <li class="list__item trips__item"><img class="trips__img"
+                                                        src="../static/blog/img/main/main-page/trips/3.jpg" alt="3"/>
+                    <div class="trips__text">
+                        <h2 class="trips__title">Family Trips</h2>
+                        <p class="trips__about">If you are traveling with family you will find interesting ideas for
+                            your vacation here.</p>
+                    </div>
+                </li>
+                <li class="list__item trips__item"><img class="trips__img"
+                                                        src="../static/blog/img/main/main-page/trips/4.jpg" alt="4"/>
+                    <div class="trips__text">
+                        <h2 class="trips__title">Cognitive Trips</h2>
+                        <p class="trips__about"> Look at activities that offer unique opportunities to learn more about
+                            Kyrgyzstan.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="about-us">
+        <div class="container">
+            <h2 class="about-us__title">About us</h2>
+            <div class="about-us__block">
+                <div class="about-us__img"><img src="../static/blog/img/main/main-page/trips/5.jpg" alt="5"/><img
+                        src="../static/blog/img/main/main-page/trips/6.jpg" alt="6"/></div>
+                <div class="about-us__text">
+                    <p>Trip to Kyrgyzstan is a Tourist Information Center with a goal to promote tourism potential of
+                        Kyrgyzstan. We created a website that can help you to find information about a variety of travel
+                        destinations and opportunities for tourism in Kyrgyzstan.</p>
+                    <p>We have collected the most interesting and useful information about traveling in Kyrgyzstan. On
+                        the website you can learn a lot of new things about the country, find the most popular
+                        destinations , learn about upcoming events, rent a car or motorbike and choose a suitable tour.
+                        For further information please contact our call-center or send us your request. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% include 'blog/includes/footer.html' %}
+{% include 'blog/includes/scripts.html' %}
+</body>
+</html>

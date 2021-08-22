@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include 'blog/includes/links.html' %}
+    <title>Authorization</title>
+    <!--title your page 'about-us' example-->
+</head>
+<body>
+{% include 'blog/includes/header.html' %}
+<main>
+    <img class="auth-img" src="../static/blog/img/main/auth-registr/1.jpg" alt="1"/>
+    <div class="box-transparent"></div>
+    <div class="auth">
+        <div class="auth-user">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger">
+                <p>{{message}}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <h2 class="title">Welcome to our website!</h2>
+        <p class="subtitle">Don't have an account? <a href="{% url 'register_page' %}">Sign up</a></p>
+        <form method="POST" class="user-data" action="#">
+            {% csrf_token %}
+            <div class="user-data__item">
+                <label for="registrEmail">Username</label>
+                <input type="text" name="registrEmail" placeholder="Your email..." id="registrEmail"/>
+            </div>
+            <div class="user-data__item">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="********" id="registrPassword"/>
+            </div>
+            <div class="user-data__item check">
+                <input type="checkbox" name="remember" id="remember"/>
+                <label for="remember">Remember me</label>
+            </div>
+            <div class="user-data__item">
+                <input class="submit" type="submit" name="authSubmit" value="SUBMIT" id="authSubmit"/>
+            </div>
+            {{ form.errors }}
+        </form>
+    </div>
+</main>
+{% include 'blog/includes/scripts.html' %}
+</body>
+</html>

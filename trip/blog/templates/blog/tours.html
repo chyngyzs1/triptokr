@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include 'blog/includes/links.html' %}
+    <title>Tours</title>
+    <!--title your page 'about-us' example-->
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+{% include 'blog/includes/header.html' %}
+<img class="header-img" src="{% static 'blog/img/header/1.jpg' %}" alt="1"/>
+<div class="tours">
+    <div class="inner"><img src="{% static 'blog/img/main/tours/1.jpg' %}" alt="1"/>
+        <h1 class="title">The beginnig of an unforgettable holiday</h1>
+    </div>
+    <div class="container">
+        <div class="search-tours">
+            <form class="side-bar" action="#">
+                <div class="side-bar__item">
+                    <h3 class="title">Duration (days)</h3>
+                    <select class="tour-select-sort" id="tour-duration" name="tour-duration" placeholder="value">
+                        <option value="" disabled="disabled" selected="selected">Choose...</option>
+                        <option value="1day">1 day</option>
+                        <option value="3day">3 days</option>
+                        <option value="1week">1 week</option>
+                        <option value="1week+">More than a week</option>
+                    </select>
+                </div>
+                <div class="side-bar__item">
+                    <h3 class="title">Categories</h3>
+                    <ul class="sort-check" id="tal">
+
+                        <li>
+                            <input type="checkbox" id="mountains"/>
+                            <label for="mountains">Mountains</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="lakesAndRivers"/>
+                            <label for="lakesAndRivers">Lakes and rivers</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="Gorges"/>
+                            <label for="Gorges">Gorges</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="waterfalls"/>
+                            <label for="waterfalls">Waterfalls</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hotSpings"/>
+                            <label for="hotSpings">Hot Springs</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="equestrian"/>
+                            <label for="equestrian">Equestrian</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural"/>
+                            <label for="cultural">Cultural</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="season"/>
+                            <label for="season">Season</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="extreme"/>
+                            <label for="extreme">Extreme</label>
+                        </li>
+                    </ul>
+                </div><br>
+            <button class="btn show-more">Sort</button>
+                <b id="ll"></b>
+            </form>
+            <div class="tour-data">
+                <div class="sorting">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+
+
+                            <form class="d-flex" action="{% url 'tours_list' %}">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                       name="search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+
+                        </div>
+                    </nav>
+                </div>
+                <ol class="list-tour">
+                    <li>
+                        <ul class="tours-content">
+                            {% for el in page_object.object_list %}
+                            <li><a href=""> <img class="tours-content__img"
+                                                  src="{{ el.img.url }}" alt=""/>
+                                <h3 class="title">{{el.title}}</h3>
+                                <p class="tours-content__lvl"><span
+                                        class="lvl-name cat-color">{{el.category}}</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">{{el.point}}</span></span></p>
+                                <p class="subtitle">{{el.body|truncatewords:15}}</p>
+                                <p><span
+                                        class="tour-date">{{el.date1 | date:"d.m" }}-{{el.date2 | date:"d.m"}}</span><span
+                                        class="tour-price">{{el.price}} сом</span></p></a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ol>
+
+                {% if is_paginated %}
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item {% if not prev_url %} disabled {% endif %}">
+                            <a class="page-link" href="{{ prev_url }}" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+
+                        {% for n in page_object.paginator.page_range %}
+
+                        {% if page_object.number == n %}
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="?page={{n}}">{{n}}</a>
+                        </li>
+                        {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{n}}">{{n}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        <li class="page-item {% if not next_url %} disabled {% endif %}">
+                            <a class="page-link" href="{{ next_url }}" tabindex="-1" aria-disabled="true">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'blog/includes/footer.html' %}
+{% include 'blog/includes/scripts.html' %}
+</body>
+</html>

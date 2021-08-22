@@ -1,0 +1,29 @@
+<header>
+    <div class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="header__logo"><a href="/"> <img src="../static/blog/img/header/logo.svg" alt="logo"/></a>
+                </div>
+                <ul class="header__menu">
+                    <li><a href="{% url 'home_page' %}">home</a></li>
+                    <li><a href="{% url 'tours_list' %}">tours</a></li>
+                    <li><a href="{% url 'reviews_list' %}">reviews</a></li>
+                    <li><a href="#">maps</a></li>
+                </ul>
+                <ul class="header__use-link">
+                    <li><a href="">EN</a></li>
+                    <li><a href="{% url 'tours_list' %}" id="search"> <i class="fas fa-search"></i></a></li>
+
+                    {% if request.user.is_authenticated %}
+
+                    <li><a href="{% url 'logout_page' %}" id="auth"><i class="fas fa-sign-out-alt"></i></a></li>
+                    <spam class="auth-user">{{request.user}}</spam>
+                    {% else %}
+                    <li><a href="{% url 'login_page' %}" id="auth"><i class="fas fa-user-alt"></i></a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

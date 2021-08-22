@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    {% include 'blog/includes/links.html' %}
+
+    <title>Tour Card</title>
+    <!--title your page 'about-us' example-->
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="container">
+          <nav class="header__nav">
+            <div class="header__logo"> <a href="/"> <img src="{% static 'blog/img/header/logo.svg' %}" alt="logo"/></a></div>
+            <ul class="header__menu">
+              <li><a href="/">home</a></li>
+              <li><a href="tours.html">tours</a></li>
+              <li> <a href="#">contacts</a></li>
+              <li> <a href="about.html">maps</a></li>
+            </ul>
+            <ul class="header__use-link">
+              <li><a href="#">EN</a></li>
+              <li><a href="#" id="search"> <i class="fas fa-search"></i></a></li>
+              <li><a href="registration.html" id="auth"><i class="fas fa-user-alt"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header><img class="header-img" src="{% static 'blog/img/header/1.jpg' %}" alt="1"/>
+    <main class="tour-card">
+      <div class="container">
+        <div class="tour-card_book"> <img class="tour-card_img" src="{% static 'blog/img/main/tours/tour3.jpg' %}" alt=""/>
+          <div class="form-card">
+            <div class="tour-start-time"> <span class="tour-start-time_day">Sunday</span><span class="tour-start-time_date">15.05.2020</span></div>
+            <ul class="tour-info">
+              <li class="tour-info__item">
+                <div> <span class="tour-info_icons"><img class="tour-infoimg" src="{% static 'blog/img/main/tours/icons/icon1.svg' %}" alt="1"/></span><span class="tour-info_inf-name">Duration</span></div>
+                <div> <span>3 day</span></div>
+              </li>
+              <li class="tour-info__item">
+                <div> <span class="tour-info_icons"><img class="tour-infoimg" src="{% static 'blog/img/main/tours/icons/icon2.svg' %}" alt="1"/></span><span class="tour-info_inf-name">Coll.Time:</span></div>
+                <div> <span>06:00</span></div>
+              </li>
+              <li class="tour-info__item">
+                <div> <span class="tour-info_icons"><img class="tour-infoimg" src="{% static 'blog/img/main/tours/icons/icon3.svg' %}" alt="1"/></span><span class="tour-info_inf-name">Venue:</span></div>
+                <div> <span>TSUM 18</span></div>
+              </li>
+              <li class="tour-info__item">
+                <div> <span class="tour-info_icons"><img class="tour-infoimg" src="{% static 'blog/img/main/tours/icons/icon4.svg' %}" alt="1"/></span><span class="tour-info_inf-name">Human:</span></div>
+                <div>
+                  <input class="tour-select-sort" type="number" value="1"/>
+                </div>
+              </li>
+            </ul>
+            <div class="btn form-card__btn-book">Book</div>
+          </div>
+        </div>
+        <div class="tour-card__describe">
+          <div class="inner">
+            <div class="name">Ak-Tyuz</div>
+            <div class="stars"> <span class="stars_icon"></span><span class="stars_point">6.4</span></div><a class="btn map" href="#">Map</a>
+          </div>
+          <p class="text">    Ak-Tüz is a village in the Kemin District of Chuy Region of Kyrgyzstan. Its population was 580 in 2009. 2012 Law on the transformation of individual urban settlements of the Kyrgyz Republic and relating them to the category of village or city.</p>
+          <div class="clients-make">
+            <div class="included"> <span class="title">Included:</span>
+              <ul>
+                <li> <span>Round trip transfer</span></li>
+                <li> <span>Guide, conductor</span></li>
+                <li> <span>Tents and sleeping bags</span></li>
+                <li> <span>Burners and cooking utensils</span></li>
+              </ul>
+            </div>
+            <div class="take"><span class="title">Take with you:</span>
+              <ul>
+                <li> <span>Warm clothes and comfortable shoes</span></li>
+                <li> <span>Sunglasses and sunscreen</span></li>
+                <li> <span>Raincoat</span></li>
+                <li> <span>Bathing and personal care products</span></li>
+                <li> <span>Food</span></li>
+                <li> <span>Personal expenses</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="distance"><span class="title">Distance </span><img class="distance__img" src="{% static 'blog/img/main/tours/icons/distance.png' %}" alt=""/>
+            <div class="distance__road"><span class="car"> 17km</span><span class="on-foot">4km</span></div><span class="title">Transport:<span>Sprinter</span></span>
+          </div>
+        </div>
+      </div>
+    </main>
+   {% include 'blog/includes/footer.html' %}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/libs.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

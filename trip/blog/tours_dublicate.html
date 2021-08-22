@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Free Command Project"/>
+    <meta name="keywords" content="TRAVEL,TRIP,TOURS TO KYRGYZSTAN,KYRGYZSTAN"/>
+    <meta name="author" content="Command of UME-4"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}"/>
+    <title>Tours</title>
+    <!--title your page 'about-us' example-->
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="header__logo"><a href="/"> <img src="{% static 'blog/img/header/logo.svg' %}"
+                                                            alt="logo"/></a></div>
+                <ul class="header__menu">
+                    <li><a href="/">home</a></li>
+                    <li><a href="tours.html">tours</a></li>
+                    <li><a href="#">contacts</a></li>
+                    <li><a href="#">maps</a></li>
+                </ul>
+                <ul class="header__use-link">
+                    <li><a href="#">EN</a></li>
+                    <li><a href="#" id="search"> <i class="fas fa-search"></i></a></li>
+                    <li><a href="registration.html" id="auth"><i class="fas fa-user-alt"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<img class="header-img" src="{% static 'blog/img/header/1.jpg' %}" alt="1"/>
+<div class="tours">
+    <div class="inner"><img src="{% static 'blog/img/main/tours/1.jpg' %}" alt="1"/>
+        <h1 class="title">The beginnig of an unforgettable holiday</h1>
+    </div>
+    <div class="container">
+        <div class="search-tours">
+            <form class="side-bar" action="#">
+                <div class="side-bar__item">
+                    <h3 class="title">Duration (days)</h3>
+                    <select class="tour-select-sort" id="tour-duration" name="tour-duration" placeholder="value">
+                        <option value="" disabled="disabled" selected="selected">Choose...</option>
+                        <option value="1day">1 day</option>
+                        <option value="3day">3 days</option>
+                        <option value="1week">1 week</option>
+                        <option value="1week+">More than a week</option>
+                    </select>
+                </div>
+                <div class="side-bar__item">
+                    <h3 class="title">Categories</h3>
+                    <ul class="sort-check">
+                        <li>
+                            <input type="checkbox" id="mountains"/>
+                            <label for="mountains">Mountains</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="lakesAndRivers"/>
+                            <label for="lakesAndRivers">Lakes and rivers</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="Gorges"/>
+                            <label for="Gorges">Gorges</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="waterfalls"/>
+                            <label for="waterfalls">Waterfalls</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hotSpings"/>
+                            <label for="hotSpings">Hot Springs</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="equestrian"/>
+                            <label for="equestrian">Equestrian</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural"/>
+                            <label for="cultural">Cultural</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-bar__item">
+                    <h3 class="title">Price (som)</h3>
+                    <input class="tour-select-sort search-price" type="number" name="priceFrom" placeholder="from"
+                           id="priceFrom"/><span class="pr-line"></span>
+                    <input class="tour-select-sort search-price" type="number" name="priceTo" placeholder="to"
+                           id="priceTo"/>
+                </div>
+            </form>
+            <div class="tour-data">
+                <div class="sorting">
+                    <select class="tour-select-sort select" id="tour-sort" name="tour-sort">
+                        <option value="" disabled="disabled" selected="selected">Sorting</option>
+                        <option value="season">Season</option>
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="difficult">Difficult</option>
+                        <option value="extreme">Extreme</option>
+                    </select>
+                </div>
+                <ol class="list-tour">
+                    <li>
+                        <ul class="tours-content">
+                            {% for el in tours %}
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour1.jpg' %}" alt=""/>
+                                <h3 class="title">Ala-Archa</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name easy">Easy</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">8.7</span></span></p>
+                                <p class="subtitle">The Ala Archa National Park is an alpine national park in the Tian
+                                    Shan mountains of Kyrgyzstan.</p>
+                                <p><span class="tour-date">08.06.2020</span><span class="tour-price">850с</span></p></a>
+                            </li>
+                            {% endfor %}
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour2.jpg' %}" alt=""/>
+                                <h3 class="title">Barskoon</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name moderate">Moderate</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">6.4</span></span></p>
+                                <p class="subtitle">Barskoon is a settlement on the southern shore of Lake Issyk Kul in
+                                    the Issyk-Kul Region of Kyrgyzstan. </p>
+                                <p><span class="tour-date">11.06.2020</span><span class="tour-price">3000с</span></p>
+                            </a></li>
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour3.jpg' %}" alt=""/>
+                                <h3 class="title">Ak-Tyuz</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name difficult">Difficult</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">9.3</span></span></p>
+                                <p class="subtitle">Ak-Tüz is a village in the Kemin District of Chuy Region of
+                                    Kyrgyzstan.</p>
+                                <p><span class="tour-date">15-18.05.2020</span><span class="tour-price">4200с</span></p>
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="tours-content">
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour4.jpg' %}" alt=""/>
+                                <h3 class="title">Issyk-Kul</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name moderate">Moderate</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">9.9</span></span></p>
+                                <p class="subtitle">Issyk-Kul is an endorheic lake in the Northern Tian Shan mountains
+                                    in Eastern Kyrgyzstan.</p>
+                                <p><span class="tour-date">07-15.06.2020</span><span class="tour-price">9800с</span></p>
+                            </a></li>
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour5.jpg' %}" alt=""/>
+                                <h3 class="title">Ethno Kyrgyz</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name easy">Easy</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">8.5</span></span></p>
+                                <p class="subtitle">The Kyrgyz people are a Turkic ethnic group native to Central Asia,
+                                    primarily Kyrgyzstan.</p>
+                                <p><span class="tour-date">03-10.06.2020</span><span class="tour-price">5000с</span></p>
+                            </a></li>
+                            <li><a href="#"> <img class="tours-content__img"
+                                                  src="{% static 'blog/img/main/tours/tour6.jpg' %}" alt=""/>
+                                <h3 class="title">Rodelbahn ride</h3>
+                                <p class="tours-content__lvl"><span class="lvl-name moderate">Moderate</span><span
+                                        class="stars"> <span class="stars__icon"></span><span
+                                        class="stars__point">5.6</span></span></p>
+                                <p class="subtitle">A rodelbahn is a simple sled traditionally used by children. It is
+                                    also a traditional form of transport used by the Innu.</p>
+                                <p><span class="tour-date">18.05.2020</span><span class="tour-price">1540с</span></p>
+                            </a></li>
+                        </ul>
+                    </li>
+                </ol>
+                <button class="btn show-more">Show more</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer"><img class="footer__img" src="{% static 'blog/img/footer/1.jpg' %}" alt="1"/>
+    <div class="container">
+        <div class="feedback">
+            <form class="message" action="#">
+                <div class="message__item">
+                    <label for="#fullName">Full Name</label>
+                    <input type="text" name="fullName" placeholder="Full Name" autocomplete="disable" id="fullName"/>
+                </div>
+                <div class="message__item">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" placeholder="example@gmail.com" autocomplete="disable" id="email"/>
+                </div>
+                <div class="message__item">
+                    <label for="message">Your message </label>
+                    <input type="textarea" name="message" placeholder="Hello..." id="message"/>
+                </div>
+                <div class="message__item">
+                    <button class="submit" type="submit" id="submit"><img
+                            src="{% static 'blog/img/footer/icons/enter .svg' %}" alt="enter"/></button>
+                </div>
+            </form>
+            <div class="contacts">
+                <p><span class="contacts__icons"></span><a class="contacts__number" href="tel: +996 773 883 983">+996
+                    (773)-883-983</a></p>
+                <p><span class="contacts__icons"></span><a class="contacts__number" href="tel: +996 702 214 118">+996
+                    (702)-214-118</a></p>
+                <p><a class="contacts__mail" href="mailto: travelkg@mail.ru">travelkg@mail.ru</a></p>
+                <p><a class="contacts__icon" href="#"><img src="{% static 'blog/img/footer/icons/instagram 1.svg' %}"
+                                                           alt="instagram 1.svg"/></a><a class="contacts__icon"
+                                                                                         href="#"><img
+                        src="{% static 'blog/img/footer/icons/whatsapp 1.svg' %}" alt="whatsapp 1.svg"/></a></p>
+            </div>
+        </div>
+        <p class="copyright">
+            2021г. Made by UME-4</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="js/libs.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

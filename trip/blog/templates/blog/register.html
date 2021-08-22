@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include 'blog/includes/links.html' %}
+    <title>Registration</title>
+    <!--title your page 'about-us' example-->
+</head>
+<body>
+{% include 'blog/includes/header.html' %}
+<main><img class="auth-img" src="../static/blog/img/main/auth-registr/1.jpg" alt="1"/>
+    <div class="box-transparent"></div>
+    <div class="auth">
+<div class="auth-user">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger">
+                <p>{{message}}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+</div>
+
+        <h2 class="title">Welcome to our website!</h2>
+        <p class="subtitle">Already have an account? <a href="{% url 'login_page' %}">Log in</a></p>
+        <form method="POST" class="user-data" action="{% url 'register_page' %}">
+            {% csrf_token %}
+
+
+            <div class="user-data__item">
+                <label for="username">Username</label>
+                <!--            <input type="text" name="username" placeholder="Username"/>-->
+                {{form.username}}
+            </div>
+            <div class="user-data__item">
+                <label for="firstName">First name</label>
+                <!--            <input type="text" name="firstName" placeholder="Name" id="firstName"/>-->
+                {{ form.first_name }}
+            </div>
+            <div class="user-data__item">
+                <label for="lastName">Last name</label>
+                <!--            <input type="text" name="lastName" placeholder="Surname" id="lastName"/>-->
+                {{ form.last_name }}
+            </div>
+            <div class="user-data__item">
+                <label for="phone">Phone</label>
+                <!--            <input type="phone" name="phone" placeholder=" Phone number" id="phone"/>-->
+                {{ form.phone }}
+            </div>
+            <div class="user-data__item">
+                <label for="password">Password</label>
+                <!--            <input type="password" name="password" placeholder="********" id="registrPassword"/>-->
+                {{ form.password1 }}
+            </div>
+            <div class="user-data__item">
+                <label for="registrEmail">Email</label>
+                <!--            <input type="email" name="registrEmail" placeholder="Your email..." id="registrEmail"/>-->
+                {{ form.email }}
+            </div>
+
+            <div class="user-data__item">
+                <label for="confirmPassword">Confirm password </label>
+                <!--            <input type="text" name="confirmPassword" placeholder="********" id="confirmPassword"/>-->
+                {{ form.password2 }}
+            </div>
+
+
+            <div class="user-data__item">
+                <label for="confirmPassword"></label>
+            </div>
+            <div class="user-data__item check">
+                <input type="checkbox" name="validRobot" id="validRobot"/>
+                <label for="validRobot">I'm not robot</label>
+            </div>
+            <div class="user-data__item">
+                <input class="submit" type="submit" name="registrSubmit" value="SUBMIT" id="registrSubmit"/>
+            </div>
+        </form>
+    </div>
+
+</main>
+
+{% include 'blog/includes/scripts.html' %}
+</body>
+</html>
